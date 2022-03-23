@@ -108,7 +108,7 @@ def try_num_clusters(df):
     s_scores = []
     for i in cluster_counts:
         print(i)
-        k_means = KMeans(n_clusters=i)
+        k_means = KMeans(n_clusters=i, random_state=0)
 
         k_means.fit(df)
 
@@ -127,7 +127,7 @@ def clusterize(df, n_clusters):
     :return:
         k_means (model)
     """
-    k_means = KMeans(n_clusters=n_clusters)
+    k_means = KMeans(n_clusters=n_clusters, random_state=0)
     k_means.fit(df)
 
     return k_means
